@@ -4,6 +4,7 @@
  * Читайте ./README.md для понимания.
  */
 
+@import '../../node_modules/normalize.css/normalize.css';
 @import './src/scss/variables.scss';
 @import './src/scss/mixins.scss';
 @import './src/scss/functions.scss';
@@ -17,6 +18,7 @@
 @import './src/blocks/btn/btn.scss';
 @import './src/blocks/sprite-svg/sprite-svg.scss';
 @import './src/blocks/sprite-png/sprite-png.scss';
+@import './src/blocks/sprite-png/sprite-png__demo.scss';
 @import './src/blocks/form/form.scss';
 @import './src/blocks/loader/loader.scss';
 @import './src/blocks/table/table.scss';
@@ -28,4 +30,17 @@
 @import './src/blocks/close/close.scss';
 @import './src/blocks/tabs/tabs.scss';
 @import './src/blocks/object-fit-polyfill/object-fit-polyfill.scss';
+@import './src/blocks/page-404/page-404.scss';
+@import './src/blocks/is-mobile/is-mobile.scss';
 @import './src/blocks/embed-responsive/embed-responsive.scss';
+@import './src/blocks/services/services.scss';
+@import './src/blocks/team/team.scss';
+@import './src/blocks/social/social.scss';
+@import './src/blocks/contacts/contacts.scss';
+@import './src/blocks/contact-form/contact-form.scss';
+@import './src/blocks/news/news.scss';
+@import './src/blocks/news-item/news-item.scss';
+@import './src/blocks/about/about.scss';
+@import './src/blocks/services-item/services-item.scss';
+@import './src/blocks/copyrights/copyrights.scss';
+@import './src/blocks/hero/hero.scss';
