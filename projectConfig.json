@@ -23,9 +23,19 @@
     "tabs": [],
     "object-fit-polyfill": [],
     "page-404": [],
-    "socials": [],
     "is-mobile": [],
-    "embed-responsive": []
+    "embed-responsive": [],
+    "services": [],
+    "team": [],
+    "social": [],
+    "contacts": [],
+    "contact-form": [],
+    "news": [],
+    "news-item": [],
+    "about": [],
+    "services-item": [],
+    "copyrights": [],
+    "hero": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",
@@ -34,10 +44,8 @@
     "./src/scss/functions.scss",
     "../../node_modules/owl.carousel/dist/assets/owl.carousel.css"
   ],
-  "addCssAfter": [
-  ],
-  "singleCompiled": [
-  ],
+  "addCssAfter": [],
+  "singleCompiled": [],
   "addJsBefore": [
     "./node_modules/picturefill/dist/picturefill.min.js",
     "./node_modules/jquery/dist/jquery.min.js",

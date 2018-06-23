@@ -14,10 +14,11 @@ $white:                       hsl(0, 0%, 100%);
 
 // Семантические цвета
 
-$main-color:                  #ecb81f;
+$main-color:                  #f7cb1b;
 $text-color:                  #4f4f4f;
 $text-muted:                  #e5e5e5;
 $footer-bg:                   #2c3e50;
+$error-color:                 #D50000;
 
 $link-color:                  $footer-bg;
 $link-color--hover:           $main-color;
@@ -29,7 +30,7 @@ $border-color:                $text-muted;
 $font-size:                   14px;
 $font-weight:                 400;
 $font-family:                 'PT Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
-$line-height:                 1.6;
+$line-height:                 1.575em;
 
 
 
@@ -40,13 +41,13 @@ $screen-sm:                   480px;
 $screen-md:                   768px;
 $screen-lg:                   992px;
 $screen-xl:                   1200px;
-$screen-xxl:                  1800px;
+// $screen-xxl:                  1800px;
 
 $container-sm:                100%;
 $container-md:                100%;
 $container-lg:                100%;
 $container-xl:                $screen-xl - 20;
-$container-xxl:               $screen-xxl - 20;
+// $container-xxl:               $screen-xxl - 20;
 
 
 
@@ -65,7 +66,7 @@ $field-padding-horizontal:    0.7em;
 $border-radius:               0;
 $opacity:                     0.7;
 $transition-time:             0.3s;
-$shadow:                      0px 4px 20px rgba(0, 0, 0, 0.25);
+$shadow:                      0 4px 20px rgba(0, 0, 0, 0.25);
 
 $menu-desktop-width:          $screen-xl;
 $toggler-part-height:         3px;

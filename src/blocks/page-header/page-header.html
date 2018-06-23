@@ -1,11 +1,72 @@
-<!--DEV
-
-Нужно убрать пробел между @-ами:
-
-@ @include('blocks/page-header/page-header.html')
-
--->
-
 <header class="page-header" role="banner">
-  page-header
+
+  <div class="page-header__top">
+    <div class="container">
+      <div class="page-header__menu">
+        <a href="/" class="logo" title="">
+          <picture>
+            <source srcset="img/yakimov-logo-tablet@1x.png" media="(min-width: 768px)">
+            <img src="img/yakimov-logo-mobile@1x.png" alt="logo" width="198" height="34">
+          </picture>
+        </a>
+        <nav id="main-nav" class="main-nav" role="navigation">
+          <button id="main-nav-toggler" class="main-nav__toggler  burger" type="button"><span></span></button>
+          <div class="main-nav__inner">
+            <ul class="main-nav__list">
+              <li class="main-nav__item  main-nav__item--active">
+                <a href="/" class="main-nav__link">
+                  Главная
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="about.html" class="main-nav__link">
+                  О Бюро
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="news.html" class="main-nav__link">
+                  Новости
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="services.html" class="main-nav__link">
+                  Услуги
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="contacts.html" class="main-nav__link">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+            <ul class="main-nav__lang">
+              <li class="main-nav__lang-item">
+                <a href="" class="main-nav__lang-link">UA</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-header__bottom">
+    <div class="container">
+      <article class="hero">
+        <div class="hero__row">
+          <div class="hero__text">
+            <h1 class="hero__title"><span>Юридическая компания</span> Якимов и Партнеры</h1>
+            <p class="hero__descr">Юридическая компания «Якимов и партнеры» - это не просто компания, основным видом деятельности которой является предоставление юридических услуг. Мы направляем наши усилия на объединение высоких стандартов ведения юридической практики, большого потенциала сотрудников и неизменного стремления понимать клиентов и их интересы.</p>
+            <a href="about.html" class="hero__link">О компании</a>
+          </div>
+          <div class="hero__img-wrapper">
+            <picture>
+              <source srcset="img/yakimov-desktop@1x.jpg" media="(min-width: 992px)">
+              <img src="img/yakimov-mobile@1x.jpg" alt="Якимов" width="320" height="480">
+            </picture>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
 </header>
