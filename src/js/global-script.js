@@ -5,16 +5,24 @@ $( document ).ready(function() {
     items: 1,
     loop: true,
     margin: 45,
+    stagePadding: 2,
     // autoWidth: true,
     nav: true,
+    navText: ['Назад','Далі&ensp;'],
     dots: false,
     responsive:{
       768: {
-        center: false,
+        // center: false,
         items: 2
       },
       1200: {
         items: 3
+      },
+      1360: {
+        items: 4
+      },
+      1800: {
+        items: 5
       }
     }
   });

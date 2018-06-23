@@ -126,7 +126,8 @@ address {
 
 ul,
 ol {
-  padding-left: 1.2em;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 ol ol,
@@ -168,16 +169,16 @@ ul {
     display: inline-block;
     vertical-align: middle;
     content: "";
-    width: 3px;
-    height: 3px;
+    width: 4px;
+    height: 4px;
     margin-right: 0.7em;
     margin-top: -3px;
     border-radius: 50%;
     background-color: $main-color;
 
     @media (min-width: $screen-xl) {
-      width: 4px;
-      height: 4px;
+      width: 5px;
+      height: 5px;
     }
   }
 }
