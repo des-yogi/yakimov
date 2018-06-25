@@ -83,3 +83,18 @@
     }
   }
 }
+
+@mixin main-article {
+  padding-top: 70px;
+  padding-bottom: 45px;
+
+  @media (min-width: $screen-md) {
+    padding-top: 80px;
+    padding-bottom: 55px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
