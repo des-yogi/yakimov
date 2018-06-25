@@ -1,0 +1,134 @@
+.services {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 45px;
+  background-image: url(../img/services-bg-mobile@1x.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  & > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.8);
+  }
+
+  @media (min-width: $screen-md) {
+    padding-top: 80px;
+    padding-bottom: 55px;
+    background-image: url(../img/services-bg-tablet@1x.jpg);
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 120px;
+    padding-bottom: 95px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    @include title-decor;
+    color: $white;
+  }
+
+  &__col {
+
+    @include col(md, 6);
+
+    @include col(xl, 4)
+
+    &:last-child {
+      @media (min-width: $screen-md) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    display: block;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: $main-color;
+    transition: all $transition-time ease-in-out;
+
+    svg {
+      display: inline-block;
+      fill: currentColor;
+    }
+
+    &:hover,
+    &:active {
+      color: $white;
+      background-color: rgba(247, 203, 27, 0.35);
+
+      h3::after {
+        background-color: $white;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 55px;
+      padding-bottom: 55px;
+    }
+  }
+
+  &__icon-wrapper {
+    text-align: inherit;
+  }
+
+  &__subtitle {
+    position: relative;
+    height: 60px;
+    margin-bottom: 25px !important;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    color: $white;
+
+    &::after {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-37.5px);
+      content: "";
+      display: block;
+      width: 75px;
+      height: 3px;
+      background-color: $main-color;
+    }
+
+    @media (min-width: $screen-md) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+}

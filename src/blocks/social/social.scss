@@ -1,0 +1,22 @@
+.social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__link {
+    margin-right: 15px;
+    @include text-hide;
+    color: $main-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    svg {
+      fill: currentColor;
+    }
+  }
+}

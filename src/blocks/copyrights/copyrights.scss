@@ -1,0 +1,47 @@
+.copyrights {
+  text-align: center;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__master {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: 25px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__dev {
+    display: inline-block;
+    vertical-align: baseline;
+    text-decoration: none;
+    color: $white;
+    transition: all $transition-time ease-in-out;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+
+    img {
+      filter: saturate(0);
+    }
+
+    &:hover,
+    &:active {
+      color: $main-color;
+
+      img {
+        filter: saturate(100%);
+      }
+    }
+  }
+}

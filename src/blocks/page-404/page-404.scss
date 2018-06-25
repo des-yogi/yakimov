@@ -1,0 +1,68 @@
+.page-404 {
+  position: relative;
+  @include main-article;
+  background-image: url(../img/services-bg-mobile@1x.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  & > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.8);
+    pointer-events: none;
+  }
+
+  @media (min-width: $screen-md) {
+    background-image: url(../img/services-bg-tablet@1x.jpg);
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    @include title-decor;
+    color: $white;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img-wrapper {
+    width: 102px;
+    height: 128px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+    overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__descr {
+    color: $white;
+
+    h2 {
+      color: inherit;
+    }
+  }
+}

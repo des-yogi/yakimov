@@ -1,0 +1,10 @@
+.map {
+
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

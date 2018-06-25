@@ -1,0 +1,197 @@
+.about {
+  @include main-article;
+  padding-bottom: 0 !important;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    @include title-decor;
+  }
+
+  section {
+    margin-bottom: 45px;
+
+    * + p {
+      margin-top: $line-height;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__intro {
+
+  }
+
+  &__img-left {
+    margin-bottom: 40px;
+    box-shadow: $shadow;
+
+    @media (min-width: $screen-md) {
+      float: left;
+      width: 320px;
+      height: 245px;
+      margin-right: 48px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 526px;
+      height: 403px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: $line-height / 2;
+  }
+
+  &__para {
+
+  }
+
+  &__middle {
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__emphasis {
+    width: 100%;
+    margin-bottom: $line-height;
+
+    @media (min-width: $screen-xl) {
+      font-size: 24px;
+    }
+  }
+
+  &__list {
+
+    &--left {
+      @media (min-width: $screen-xl) {
+        width: calc(100% - 335px);
+        padding-right: 48px;
+      }
+    }
+  }
+
+  &__list-item {
+    position: relative;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $border-color;
+    }
+  }
+
+  &__img-bottom-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 45px;
+    margin-top: 45px;
+
+    @media (min-width: $screen-xl) {
+      width: 335px;
+    }
+  }
+
+  &__card-blocks {
+
+    p + ul {
+      margin-top: 35px;
+    }
+
+    @media (min-width: $screen-md) {
+      // @include row();
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+/*   &__col {
+  @include col(md, 6)
+} */
+
+  &__card {
+
+    &:nth-child(-n+2) {
+      padding: 45px 25px;
+      margin-bottom: 45px;
+      box-shadow: $shadow;
+
+      @media (min-width: $screen-md) {
+        padding: 55px 45px;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding: 60px 45px;
+      }
+    }
+
+    &:nth-child(2) {
+      @media (min-width: $screen-md) {
+        width: calc(50%);
+      }
+
+      @media (min-width: $screen-xl) {
+        width: calc(50% - 24px);
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $screen-md) {
+        width: calc(50% - 48px);
+        margin-left: 48px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: calc(50% - 24px);
+      }
+    }
+
+    &:first-child {
+
+      ul {
+        @media (min-width: $screen-md) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+      }
+
+      li {
+        @media (min-width: $screen-md) {
+          width: calc(50% - 24px);
+          margin-top: 0;
+
+          &:nth-last-child(-n+2) {
+            margin-bottom: 0;
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

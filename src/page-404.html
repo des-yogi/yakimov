@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Якимов и Партнеры. Юридическая компания</title>
+  <meta name="description" content="">
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      <header class="page-header  page-header--noindex" role="banner">
+
+        <div class="page-header__top">
+          <div class="container">
+            <div class="page-header__menu">
+              <a href="/" class="logo" title="">
+                <picture>
+                  <source srcset="img/yakimov-logo-tablet@1x.png" media="(min-width: 768px)">
+                  <img src="img/yakimov-logo-mobile@1x.png" alt="logo" width="198" height="34">
+                </picture>
+              </a>
+              <nav id="main-nav" class="main-nav" role="navigation">
+                <button id="main-nav-toggler" class="main-nav__toggler  burger" type="button"><span></span></button>
+                <div class="main-nav__inner">
+                  <ul class="main-nav__list">
+                    <li class="main-nav__item  main-nav__item--active">
+                      <a href="/" class="main-nav__link">
+                        Главная
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="about.html" class="main-nav__link">
+                        О Бюро
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="news.html" class="main-nav__link">
+                        Новости
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="services.html" class="main-nav__link">
+                        Услуги
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="contacts.html" class="main-nav__link">
+                        Контакты
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="main-nav__lang">
+                    <li class="main-nav__lang-item">
+                      <a href="" class="main-nav__lang-link">UA</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+
+      <main role="main  main--noindex">
+
+        <article class="page-404">
+          <div class="container">
+            <h1 class="page-404__title">404</h1>
+            <div class="page-404__inner">
+              <div class="page-404__img-wrapper">
+                <img src="img/page-404-icon.svg" alt="page-404" width="102" height="128">
+              </div>
+              <div class="page-404__descr">
+                <h2>Страница не найдена или не сущестует…</h2>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+</body>
+</html>

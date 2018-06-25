@@ -1,0 +1,117 @@
+.team {
+  padding-top: 70px;
+  padding-bottom: 35px;
+
+  .owl-carousel .owl-nav {
+    @include container();
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+
+    button {
+      @include btn();
+      padding-top: 5px !important;
+      padding-bottom: 20px !important;
+      font-size: 16px !important;
+    }
+
+    .owl-prev {
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        &::after {
+          transform: scale3D(-1,1,1) translateX(30px);
+        }
+      }
+
+      &::after {
+        right: 0;
+        left: initial;
+        transform: scale3D(-1,1,1);
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      padding-bottom: 15px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 120px;
+    }
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    @include title-decor;
+  }
+
+  &__slider {
+
+  }
+
+  &__slide {
+
+    &:hover {
+      @media (min-width: $screen-xl) {
+        box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      box-shadow: $shadow;
+    }
+  }
+
+  &__img-wrapper {
+    overflow: hidden;
+    box-shadow: $shadow;
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 35px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: $shadow;
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      margin-right: 0;
+      box-shadow: none;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    font-size: 1.786em;
+    color: $main-color;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &__para {
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+}

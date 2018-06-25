@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Якимов и Партнеры. Юридическая компания</title>
+  <meta name="description" content="">
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      <header class="page-header  page-header--noindex" role="banner">
+
+        <div class="page-header__top">
+          <div class="container">
+            <div class="page-header__menu">
+              <a href="/" class="logo" title="">
+                <picture>
+                  <source srcset="img/yakimov-logo-tablet@1x.png" media="(min-width: 768px)">
+                  <img src="img/yakimov-logo-mobile@1x.png" alt="logo" width="198" height="34">
+                </picture>
+              </a>
+              <nav id="main-nav" class="main-nav" role="navigation">
+                <button id="main-nav-toggler" class="main-nav__toggler  burger" type="button"><span></span></button>
+                <div class="main-nav__inner">
+                  <ul class="main-nav__list">
+                    <li class="main-nav__item  main-nav__item--active">
+                      <a href="/" class="main-nav__link">
+                        Главная
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="about.html" class="main-nav__link">
+                        О Бюро
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="news.html" class="main-nav__link">
+                        Новости
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="services.html" class="main-nav__link">
+                        Услуги
+                      </a>
+                    </li>
+                    <li class="main-nav__item">
+                      <a href="contacts.html" class="main-nav__link">
+                        Контакты
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="main-nav__lang">
+                    <li class="main-nav__lang-item">
+                      <a href="" class="main-nav__lang-link">UA</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+
+      <main role="main  main--noindex">
+
+        <article class="contacts">
+          <div class="container">
+
+            <h1 class="contacts__title">Контакты</h1>
+
+            <section class="contacts__row">
+
+              <div class="contacts__text">
+                <h2 class="contacts__address-name">Киев</h2>
+                <div class="contacts__address-wrapper">
+                  <h4 class="contacts__name">Місцезнаходження:</h4>
+                  <span class="contacts__address">01030 г. Киев, ул. Богдана Хмельницкого, 26, оф. 312</span>
+                </div>
+                <div class="contacts__address-wrapper">
+                  <h4 class="contacts__name">Телефон:</h4>
+                  <span>
+                    <a href="tel:+380442217456" class="contacts__tel-link">+38 044 221 74 56</a>
+                    — Ассистент
+                  </span>
+                  <span>
+                    <a href="tel:+380675511396" class="contacts__tel-link">+38 067 551 13 96</a>
+                  </span>
+                </div>
+              </div>
+
+              <div class="contacts__map-wrapper  contacts__map-wrapper--kiev">
+                <article class="map  map--kiev">Карта</article>
+              </div>
+
+            </section>
+
+            <section class="contacts__row">
+              <div class="contacts__text  contacts__text--odessa">
+                <h2 class="contacts__address-name">Одесса</h2>
+                <div class="contacts__address-wrapper">
+                  <h4 class="contacts__name">Місцезнаходження:</h4>
+                  <span class="contacts__address">г. Одесса, ул. Космонавтов, 36, оф. 805</span>
+                </div>
+                <div class="contacts__address-wrapper">
+                  <h4 class="contacts__name">Телефон:</h4>
+                  <span>
+                    <a href="tel:+380674869194" class="contacts__tel-link">+38 067 486 91 94</a>
+                  </span>
+                </div>
+              </div>
+
+              <div class="contacts__map-wrapper  contacts__map-wrapper--odessa">
+                <article class="map  map--odessa">Карта</article>
+              </div>
+            </section>
+
+            <h2 class="contacts__subtitle">Свяжитесь с нами</h2>
+
+            <section class="contacts__row  contacts__row--form">
+
+              <div class="contacts__form-wrapper">
+                <form id="contact-form" class="contacts__form" action="" method="post" name="contact-form">
+                  <div class="contacts__form-section-01">
+                    <div class="contacts__control-wrapper">
+                      <label for="name">Имя</label>
+                      <input id="name" type="text" name="name" value="">
+                      <span class="error-message"></span>
+                    </div>
+                    <div class="contacts__control-wrapper">
+                      <label for="email">E-mail</label>
+                      <input id="email" type="email" name="email" value="" placeholder="">
+                      <span class="error-message"></span>
+                    </div>
+                    <div class="contacts__control-wrapper">
+                      <label for="tel">Телефон</label>
+                      <input id="tel" type="tel" name="tel" value="">
+                      <span class="error-message"></span>
+                    </div>
+                  </div>
+                  <div class="contacts__form-section-02">
+                    <div class="contacts__control-wrapper">
+                      <label for="message">Сообщение</label>
+                      <textarea id="message" name="message" value="" placeholder=""></textarea>
+                      <span class="error-message"></span>
+                    </div>
+                    <div class="contacts__control-wrapper  contacts__control-wrapper--btn">
+                      <button class="btn" type="submit">Отправить</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="contacts__tel-wrapper">
+                <h3 class="contacts__tel">Позвоните по телефону</h3>
+                <a href="tel:+380675511396" class="contacts__tel-link">+38 067 551 13 96</a>
+                <a href="tel:+380442217456" class="contacts__tel-link">+38 044 221 74 56</a>
+              </div>
+            </section>
+
+          </div>
+        </article>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+</body>
+</html>

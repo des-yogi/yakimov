@@ -1,0 +1,294 @@
+.contacts {
+  @include main-article;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    @include title-decor;
+  }
+
+  &__subtitle {
+    @include title-decor;
+    margin-top: 70px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 110px;
+    }
+  }
+
+  &__row {
+    margin-bottom: 45px;
+    box-shadow: $shadow;
+
+    &--form {
+      align-items: flex-start;
+      box-shadow: none;
+      margin-bottom: 30px;
+
+      @media (min-width: $screen-md) {
+        align-items: center;
+      }
+    }
+
+    @include row (
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  0,
+      $lg-grid-gutter:  0,
+      $xl-grid-gutter:  0
+    )
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__text {
+    padding: 45px 25px;
+
+    @media (min-width: $screen-md) {
+      padding: 55px 48px !important;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 60px 48px !important;
+    }
+
+    @include col(md, 5);
+
+    @include col(xl, 6);
+
+    &--odessa {
+
+    }
+  }
+
+  &__address-name {
+    margin-top: 0;
+    margin-bottom: 35px;
+    color: $main-color;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__address-wrapper {
+    margin-bottom: 30px;
+
+    span {
+      display: block;
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 15px;
+
+    @media (min-width: $screen-md) {
+
+    }
+  }
+
+  &__address {
+
+  }
+
+  &__tel-link {
+    display: inline-block;
+    line-height: inherit;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover,
+    &:active {
+      color: $main-color;
+      text-decoration: underline;
+    }
+  }
+
+  &__map-wrapper {
+    width: 100%;
+    min-height: 230px;
+    background-color: $border-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &--kiev {
+      background-image: url(../img/static-map.jpg);
+    }
+
+    &--odessa {
+      background-image: url(../img/static-map.jpg);
+
+      @media (min-width: $screen-md) {
+        order: -1;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      min-height: 375px;
+    }
+
+    @media (min-width: $screen-xl) {
+      min-height: 435px;
+    }
+
+      @include col(md, 7);
+
+      @include col(xl, 6);
+  }
+
+  &__form-wrapper {
+    padding: 45px 25px;
+    margin-bottom: 48px;
+    box-shadow: $shadow;
+
+    @include col(md, 7);
+
+    @include col(xl, 9);
+
+    @media (min-width: $screen-md) {
+      padding: 55px 48px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 60px 48px;
+    }
+  }
+
+  &__form {
+
+    & > div {
+
+      @media (min-width: $screen-xl) {
+        width: calc(50% - 48px);
+
+        &:first-child {
+          margin-bottom: 35px;
+        }
+
+        &:last-child {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .contacts__control-wrapper--btn {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__control-wrapper {
+
+    label {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    textarea,
+    input {
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid $text-muted;
+
+      &:invalid {
+        border-bottom-color: $error-color;
+      }
+
+      &:hover,
+      &:focus {
+        border-bottom-color: $text-color;
+      }
+    }
+
+    textarea {
+      min-height: 60px;
+
+      @media (min-width: $screen-xl) {
+        min-height: 130px;
+      }
+    }
+
+    &:focus-within {
+      label {
+        color: $main-color;
+      }
+    }
+  }
+
+  &__tel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include col(md, 5);
+
+    @include col(xl, 3);
+
+    a {
+      margin-bottom: 5px;
+      font-size: 18px;
+      font-weight: 700;
+
+      &:first-of-type {
+        position: relative;
+        margin-bottom: 10px;
+
+        &:after {
+          position: absolute;
+          left: 0;
+          top: -15px;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: $main-color;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      padding-left: 48px !important;
+    }
+  }
+
+  &__tel {
+    width: 115px;
+    margin-top: 0;
+    margin-bottom: 42px;
+    font-size: 20px;
+    color: $main-color;
+  }
+}
+
