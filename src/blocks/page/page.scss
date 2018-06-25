@@ -100,8 +100,8 @@ input[type=email],
 textarea {
   display: inline-block;
   width: auto;
-  height: 40px;
-  padding-left: 10px;
+  height: 35px;
+  padding-left: 0;
   padding-right: 10px;
   vertical-align: middle;
   font-family: inherit;
@@ -116,6 +116,7 @@ textarea {
 
   &:focus {
     // @include field-focus;
+    outline: none;
   }
 
   &[disabled],
@@ -153,7 +154,7 @@ textarea {
   padding-bottom: 5px;
   font-family: inherit;
   font-size: 0.85em;
-  color: inherit;
+  color: $error-color;
 }
 
 .visible {

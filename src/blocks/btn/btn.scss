@@ -8,6 +8,8 @@
   margin: 0;
   padding-top: 5px;
   padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
@@ -19,6 +21,8 @@
   text-decoration: none;
   text-transform: none;
   color: $text-color;
+  background-color: transparent;
+  border: none;
   background-image: none;
   cursor: pointer;
 
@@ -49,14 +53,32 @@
 
   &--disabled,
   &:disabled {
-    // opacity: $opacity;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
+    opacity: 0.4;
 
     @at-root a.btn--disabled {
       pointer-events: none;
+    }
+
+    &::after {
+      transform: none;
+    }
+  }
+
+  &--prev {
+
+    &::after {
+      left: initial;
+      right: 0;
+      transform: scale3D(-1, 1, 1);
+    }
+
+    &:hover,
+    &:focus {
+
+      &::after {
+        transform: scale3D(-1, 1, 1) translateX(30px);
+      }
     }
   }
 }
