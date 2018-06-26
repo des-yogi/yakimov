@@ -15,14 +15,12 @@ $( document ).ready(function() {
         // center: false,
         items: 2
       },
-      1200: {
+      992: {
+        center: false,
         items: 3
       },
-      1360: {
-        items: 4
-      },
-      1800: {
-        items: 5
+      1200: {
+        items: 3
       }
     }
   });
@@ -31,7 +29,7 @@ $( document ).ready(function() {
 
 (function(){
   var menuBox = document.querySelector('.main-nav__inner');
-  var burger = document.querySelector('.burger');
+  var burger = document.querySelector('.wrapper-menu');
   //var mainNavContainer = document.querySelector('.page-header__nav-wrapper');
 
   var burgerClickHandler = function (e) {
@@ -49,6 +47,12 @@ $( document ).ready(function() {
   burger.addEventListener('click', burgerClickHandler);
 }());
 
+(function(){
+  var wrapperMenu = document.querySelector('.wrapper-menu');
+  wrapperMenu.addEventListener('click', function(){
+    wrapperMenu.classList.toggle('open');
+  })
+}());
 // На проекте нет jQuery, но хочется $( document ).ready...
 // function ready(fn) {
 //   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){

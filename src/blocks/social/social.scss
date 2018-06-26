@@ -6,13 +6,14 @@
   $block-name:                &; // #{$block-name}__element
 
   &__link {
-    margin-right: 15px;
+    margin-right: 20px;
     @include text-hide;
     color: $main-color;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      transform: scale(1.2);
+      // transform: scale(1.2);
+      color: $white;
     }
 
     svg {

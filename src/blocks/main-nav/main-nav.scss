@@ -136,22 +136,6 @@ $transition-time:             0.3s !default;
     }
   }
 
-/*   &__link {
-  display: block;
-  //padding: 0.5em;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  text-decoration: none;
-  // background-color: #fff;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-} */
-
   &__lang {
     padding-left: 0;
     list-style-type: none;
@@ -163,21 +147,5 @@ $transition-time:             0.3s !default;
       padding-right: 0 !important;
     }
   }
-
-  // переключатель
-
-  &__toggler {
-    display: inline-block;
-    padding: 0;
-    background: none;
-    border: none;
-
-    /* .no-js & {
-      display: none;
-    } */
-
-    @media (min-width: $menu-desktop-width) {
-      display: none;
-    }
-  }
 }
+

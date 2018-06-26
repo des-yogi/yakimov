@@ -1,4 +1,4 @@
-(function(){
+/*(function(){
 
   // Добавление/удаление модификаторов при клике на переключение видимости
   var toggler = document.getElementById('main-nav-toggler');
@@ -73,3 +73,4 @@
   // })(Element.prototype);
 
 }());
+*/
