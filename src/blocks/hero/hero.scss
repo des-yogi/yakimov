@@ -4,9 +4,12 @@
   $block-name:                &; // #{$block-name}__element
 
   &__row {
+    box-shadow: $shadow;
 
     @media (min-width: $screen-md) {
       @include row();
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
@@ -22,8 +25,10 @@
       align-items: flex-start;
       padding-top: 70px;
       padding-bottom: 55px;
-      padding-left: 70px;
+      //padding-left: 70px;
+      padding-left: 48px;
       padding-right: 6px;
+      //box-shadow: $shadow;
     }
 
     @media (min-width: $screen-xl) {
@@ -52,7 +57,7 @@
 
   &__descr {
     margin-bottom: 25px;
-    font-weight: 700;
+    font-weight: 400;
 
     @media (min-width: $screen-xl) {
       font-size: 18px;
@@ -106,6 +111,10 @@
     }
 
     @include col (md, 6);
+
+    @media (min-width: $screen-md) {
+      padding-right: 0;
+    }
 
     @media (min-width: $screen-xl) {
       max-height: 556px;

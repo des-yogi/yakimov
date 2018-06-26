@@ -33,6 +33,7 @@
   @media (min-width: $screen-xl) {
     padding-top: 120px;
     padding-bottom: 95px;
+    background-image: url(../img/services-bg-desktop@1x.jpg);
   }
 
   $block-name:                &; // #{$block-name}__element
@@ -82,7 +83,8 @@
     &:hover,
     &:active {
       color: $white;
-      background-color: rgba(247, 203, 27, 0.35);
+      background-color: rgba(247, 203, 27, 0.6);
+      box-shadow: $shadow;
 
       h3::after {
         background-color: $white;
@@ -108,6 +110,7 @@
   &__subtitle {
     position: relative;
     height: 60px;
+    max-height: 60px;
     margin-bottom: 25px !important;
     padding-left: 30px;
     padding-right: 30px;
@@ -127,8 +130,8 @@
     }
 
     @media (min-width: $screen-md) {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 30px;
+      padding-right: 30px;
     }
   }
 }

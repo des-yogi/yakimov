@@ -36,7 +36,8 @@
     "services-item": [],
     "copyrights": [],
     "hero": [],
-    "map": []
+    "map": [],
+    "wrapper-menu": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",

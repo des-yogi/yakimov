@@ -11,12 +11,15 @@
 
     button {
       @include btn();
+      width: 60px;
       padding-top: 5px !important;
       padding-bottom: 20px !important;
       font-size: 16px !important;
+      text-align: left;
     }
 
     .owl-prev {
+      text-align: right;
 
       &:hover,
       &:focus {
@@ -39,7 +42,10 @@
     }
 
     @media (min-width: $screen-xl) {
+      width: auto;
       padding-bottom: 120px;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -51,6 +57,12 @@
 
   &__slider {
 
+    @media (min-width: $screen-xl) {
+      width: 1100px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__slide {
@@ -111,7 +123,10 @@
   }
 
   &__para {
-    font-weight: 700;
+    height: 75px;
+    max-height: 75px;
+    font-weight: 400;
     margin-bottom: 40px;
+    overflow: hidden;
   }
 }
