@@ -60,16 +60,14 @@ $( document ).ready(function() {
   // var langItems = langMenu.querySelectorAll('.main-nav__lang-link');
 
   langWrapper.addEventListener('mouseover', function() {
-    if (langWrapper.style.overflow = 'hidden') {
-      langWrapper.style.overflow = 'visible';
-      // langMenu.classList.remove('main-nav__lang-item--closed');
+    if (!langMenu.classList.contains('main-nav__lang-item--open')) {
+      langMenu.classList.add('main-nav__lang-item--open');
     } else return;
   })
 
   langWrapper.addEventListener('mouseout', function() {
-    if (langWrapper.style.overflow = 'visible') {
-      langWrapper.style.overflow = 'hidden';
-      // langMenu.classList.add('main-nav__lang-item--closed');
+    if (langMenu.classList.contains('main-nav__lang-item--open')) {
+      langMenu.classList.remove('main-nav__lang-item--open');
     } else return;
   })
 }());
