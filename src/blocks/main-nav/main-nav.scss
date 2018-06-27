@@ -30,12 +30,13 @@ $transition-time:             0.3s !default;
     right: 0;
     z-index: 1;
     transform: translateX(100%);
-    min-width: 200px;
+    min-width: 240px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
     padding-right: 20px;
     background-color: $white;
+    box-shadow: $shadow;
     transition: all $transition-time ease-in-out;
 
     li {
@@ -56,6 +57,7 @@ $transition-time:             0.3s !default;
       font-size: 18px;
       letter-spacing: 1.5px;
       text-decoration: none;
+      transition: all 0.2s ease-in-out;
 
       &:hover,
       &:focus {
@@ -70,7 +72,9 @@ $transition-time:             0.3s !default;
 
     @media (min-width: $screen-md) {
       // right: -40px;
+      top: 48px + 46px;
       padding-right: 40px;
+      padding-top: 30px;
     }
 
     @media (min-width: $screen-xl) {
@@ -78,6 +82,7 @@ $transition-time:             0.3s !default;
       display: flex;
       transform: none;
       padding: 0;
+      box-shadow: none;
     }
 
     &--open {
@@ -139,12 +144,82 @@ $transition-time:             0.3s !default;
   &__lang {
     padding-left: 0;
     list-style-type: none;
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      width: 66px;
+      // height: 56px;
+      // overflow: hidden;
+    }
+  }
+
+  &__lang-item {
+    display: flex;
+
+    @media (min-width: $screen-xl) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      width: 100%;
+      // height: 100%;
+      height: 56px;
+      background-color: $white;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &--open {
+
+      @media (min-width: $screen-xl) {
+        height: 56px * 3;
+      }
+    }
+
   }
 
   &__lang-link {
+    margin-right: 35px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $main-color;
+    }
+
+    &.active {
+      // color: $text-color;
+
+      @media (min-width: $screen-xl) {
+        z-index: 1;
+        order: -1;
+        // top: 0;
+        // left: 0;
+      }
+    }
+
+    /* &:nth-child(0) {
+      top: 0;
+    }
+
+    &:nth-child(1) {
+      top: 56px;
+    }
+
+    &:nth-child(2) {
+      top: 56px * 2;
+    } */
 
     @media (min-width: $screen-xl) {
-      padding-right: 0 !important;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      margin-right: 0;
+      padding-right: 20px !important;
+      padding-left: 20px !important;
+      background-color: $white;
     }
   }
 }

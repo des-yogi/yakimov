@@ -53,6 +53,25 @@ $( document ).ready(function() {
     wrapperMenu.classList.toggle('open');
   })
 }());
+
+(function(){
+  var langWrapper = document.querySelector('.main-nav__lang');
+  var langMenu = langWrapper.querySelector('.main-nav__lang-item');
+  // var langItems = langMenu.querySelectorAll('.main-nav__lang-link');
+
+  langWrapper.addEventListener('mouseover', function() {
+    if (!langMenu.classList.contains('main-nav__lang-item--open')) {
+      langMenu.classList.add('main-nav__lang-item--open');
+    } else return;
+  })
+
+  langWrapper.addEventListener('mouseout', function() {
+    if (langMenu.classList.contains('main-nav__lang-item--open')) {
+      langMenu.classList.remove('main-nav__lang-item--open');
+    } else return;
+  })
+}());
+
 // На проекте нет jQuery, но хочется $( document ).ready...
 // function ready(fn) {
 //   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
