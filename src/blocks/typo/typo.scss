@@ -1,14 +1,3 @@
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff'),
-//        url('../fonts/FONTNAME.ttf')  format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-// }
-
-
-
 body {
   // ТОЛЬКО типографика!
   font-family: $font-family;
@@ -91,6 +80,15 @@ h5, .h5 {
   }
 }
 
+h4 + p,
+h4 + ul,
+h4 + ol,
+h5 + p,
+h5 + ul,
+h5 + ol, {
+  margin-top: $line-height / 2;
+}
+
 p,
 ul,
 ol,
@@ -116,7 +114,14 @@ figure {
   }
 }
 
-p + p {
+p + p,
+p + ol,
+p + ul {
+  margin-top: $line-height / 2;
+}
+
+ol + p,
+ul + p {
   margin-top: $line-height / 2;
 }
 
