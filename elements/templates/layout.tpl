@@ -41,12 +41,30 @@
       <div class="page-header__top">
         <div class="container">
           <div class="page-header__menu">
-            <a {if $_modx->resource.id == '1' ?}{else}href="/"{/if} class="logo" title="[[++site_name]]">
-              <picture>
-                <source srcset="assets/img/yakimov-logo-tablet@1x.png" media="(min-width: 768px)">
-                <img src="assets/img/yakimov-logo-mobile@1x.png" alt="[[++site_name]]" width="198" height="34">
-              </picture>
-            </a>
+            <!-- Поменять версии логотипов, если надо -->
+            {if $_modx->config.cultureKey == 'ru' ?}
+              <a href="/" class="logo" title="[[++site_name]]">
+                <picture>
+                  <source srcset="assets/img/yakimov-logo-tablet@1x.png" media="(min-width: 768px)">
+                  <img src="assets/img/yakimov-logo-mobile@1x.png" alt="[[++site_name]]" width="198" height="34">
+                </picture>
+              </a>
+            {elseif $_modx->config.cultureKey == 'ua' ?}
+              <a href="/ua/" class="logo" title="[[++site_name]]">
+                <picture>
+                  <source srcset="assets/img/yakimov-logo-tablet@1x.png" media="(min-width: 768px)">
+                  <img src="assets/img/yakimov-logo-mobile@1x.png" alt="[[++site_name]]" width="198" height="34">
+                </picture>
+              </a>
+            {else}
+              <a href="/en/" class="logo" title="[[++site_name]]">
+                <picture>
+                  <source srcset="assets/img/yakimov-logo-tablet@1x.png" media="(min-width: 768px)">
+                  <img src="assets/img/yakimov-logo-mobile@1x.png" alt="[[++site_name]]" width="198" height="34">
+                </picture>
+              </a>
+            {/if}
+
             <nav id="main-nav" class="main-nav" role="navigation">
               <div class="wrapper-menu">
                 <div class="line-menu half start"></div>
@@ -58,7 +76,6 @@
                 [[pdoMenu?
                 &parents=`0`
                 &level=`1`
-                &levelClass=`level`
                 &tplOuter=`@INLINE <ul class="main-nav__list" role="navigation">[[+wrapper]]</ul>`
                 &tpl=`@INLINE
                 <li class="main-nav__item">
@@ -74,9 +91,19 @@
 
                 <ul class="main-nav__lang">
                   <li class="main-nav__lang-item">
-                    <a href="" class="main-nav__lang-link  main-nav__lang-link--ru">RU</a>
-                    <a href="" class="main-nav__lang-link  main-nav__lang-link--ua">UA</a>
-                    <a href="" class="main-nav__lang-link  main-nav__lang-link--en">EN</a>
+                    {if $_modx->config.cultureKey == 'ru' ?}
+                      <a href="/" class="main-nav__lang-link  main-nav__lang-link--ru">RU</a>
+                      <a href="/ua/" class="main-nav__lang-link  main-nav__lang-link--ua">UA</a>
+                      <a href="/en/" class="main-nav__lang-link  main-nav__lang-link--en">EN</a>
+                    {elseif $_modx->config.cultureKey == 'ua' ?}
+                      <a href="/ua/" class="main-nav__lang-link  main-nav__lang-link--ua">UA</a>
+                      <a href="/" class="main-nav__lang-link  main-nav__lang-link--ru">RU</a>
+                      <a href="/en/" class="main-nav__lang-link  main-nav__lang-link--en">EN</a>
+                    {else}
+                      <a href="/en/" class="main-nav__lang-link  main-nav__lang-link--en">EN</a>
+                      <a href="/" class="main-nav__lang-link  main-nav__lang-link--ru">RU</a>
+                      <a href="/ua/" class="main-nav__lang-link  main-nav__lang-link--ua">UA</a>
+                    {/if}
                   </li>
                 </ul>
 
@@ -86,15 +113,37 @@
         </div>
       </div>
 
-      {if $_modx->resource.id == '1' ?}
+      {if $_modx->resource.id == '1' || $_modx->resource.id == '34' || $_modx->resource.id == '35' ?}
         <div class="page-header__bottom">
           <div class="container">
             <article class="hero">
               <div class="hero__row">
                 <div class="hero__text">
-                  <h1 class="hero__title"><span>Юридическая компания</span> Якимов и Партнеры</h1>
-                  <p class="hero__descr">[[#1.introtext]]</p>
-                  <a href="[[~5]]" class="hero__link">[[#5.pagetitle]]</a>
+                  <h1 class="hero__title">
+                    {if $_modx->config.cultureKey == 'ru' ?}
+                      <span>Юридическая компания</span> Якимов и Партнеры
+                    {elseif $_modx->config.cultureKey == 'ua' ?}
+                      <span> Юридична компанія </span> Якимів та Партнери
+                    {else}
+                      <span> Law Firm </span> Yakimov & Partners
+                    {/if}
+                  </h1>
+                  <p class="hero__descr">
+                    {if $_modx->config.cultureKey == 'ru' ?}
+                      [[#1.introtext]]
+                    {elseif $_modx->config.cultureKey == 'ua' ?}
+                      [[#34.introtext]]
+                    {else}
+                      [[#35.introtext]]
+                    {/if}
+                  </p>
+                  {if $_modx->config.cultureKey == 'ru' ?}
+                    <a href="[[~5]]" class="hero__link">[[#5.pagetitle]]</a>
+                  {elseif $_modx->config.cultureKey == 'ua' ?}
+                    <a href="[[~36]]" class="hero__link">[[#36.pagetitle]]</a>
+                  {else}
+                    <a href="[[~37]]" class="hero__link">[[#37.pagetitle]]</a>
+                  {/if}
                 </div>
                 <div class="hero__img-wrapper">
                   <picture>
@@ -120,50 +169,99 @@
       <div class="container">
         <div class="page-footer__top">
           <section class="page-footer__service">
-            <h3 class="page-footer__title">[[#7.pagetitle]]</h3>
+            <h3 class="page-footer__title">
+              {if $_modx->config.cultureKey == 'ru' ?}
+                [[#7.pagetitle]]
+              {elseif $_modx->config.cultureKey == 'ua' ?}
+                [[#40.pagetitle]]
+              {else}
+                [[#41.pagetitle]]
+              {/if}
+            </h3>
 
             [[pdoMenu?
-            &parents=`7`
-            &level=`1`
-            &showHidden=`1`
-            &tplOuter=`@INLINE <ul class="page-footer__list" role="navigation">[[+wrapper]]</ul>`
-            &tpl=`@INLINE
-            <li class="page-footer__item">
-              <a href="[[+uri]]" class="page-footer__link">[[+menutitle]]</a>[[+wrapper]]
-            </li>
-            `
-            &tplHere=`@INLINE
-            <li class="page-footer__item  active">
-              <a href="[[+uri]]" class="page-footer__link">[[+menutitle]]</a>[[+wrapper]]
-            </li>
-            `
+              &parents=`
+              {if $_modx->config.cultureKey == 'ru' ?}
+                7
+              {elseif $_modx->config.cultureKey == 'ua' ?}
+                [[BabelTranslation? &resourceId=`7` &contextKey=`ukr`]]
+              {else}
+                [[BabelTranslation? &resourceId=`7` &contextKey=`eng`]]
+              {/if}
+              `
+              &level=`1`
+              &showHidden=`1`
+              &tplOuter=`@INLINE <ul class="page-footer__list" role="navigation">[[+wrapper]]</ul>`
+              &tpl=`@INLINE
+              <li class="page-footer__item">
+                <a href="[[+uri]]" class="page-footer__link">[[+menutitle]]</a>[[+wrapper]]
+              </li>
+              `
+              &tplHere=`@INLINE
+              <li class="page-footer__item  active">
+                <a href="[[+uri]]" class="page-footer__link">[[+menutitle]]</a>[[+wrapper]]
+              </li>
+              `
             ]]
 
           </section>
           <section class="page-footer__news">
-            <h3 class="page-footer__title">[[#6.pagetitle]]</h3>
+            <h3 class="page-footer__title">
+              {if $_modx->config.cultureKey == 'ru' ?}
+              [[#6.pagetitle]]
+              {elseif $_modx->config.cultureKey == 'ua' ?}
+              [[#38.pagetitle]]
+              {else}
+              [[#39.pagetitle]]
+              {/if}
+            </h3>
 
             [[pdoMenu?
-            &parents=`6`
-            &level=`1`
-            &showHidden=`1`
-            &limit=`5`
-            &tplOuter=`@INLINE <ul class="page-footer__list" role="navigation">[[+wrapper]]</ul>`
-            &tpl=`@INLINE
-            <li class="page-footer__item">
-              <span class="page-footer__date">[[+publishedon:date=`%d.%m.%Y`]]</span>
-              <a href="[[+uri]]" class="page-footer__link">[[+menutitle]]</a>[[+wrapper]]
-            </li>
-            `
+              &parents=`
+              {if $_modx->config.cultureKey == 'ru' ?}
+                6
+              {elseif $_modx->config.cultureKey == 'ua' ?}
+                [[BabelTranslation? &resourceId=`6` &contextKey=`ukr`]]
+              {else}
+                [[BabelTranslation? &resourceId=`6` &contextKey=`eng`]]
+              {/if}
+              `
+              &level=`1`
+              &showHidden=`1`
+              &limit=`5`
+              &sortby=`{ "publishedon":"DESC" }`
+              &tplOuter=`@INLINE <ul class="page-footer__list" role="navigation">[[+wrapper]]</ul>`
+              &tpl=`@INLINE
+              <li class="page-footer__item">
+                <span class="page-footer__date">[[+publishedon:date=`%d.%m.%Y`]]</span>
+                <a href="[[+uri]]" class="page-footer__link">[[+menutitle]]</a>[[+wrapper]]
+              </li>
+              `
             ]]
 
           </section>
           <section class="page-footer__contacts">
-            <h3 class="page-footer__title">[[#8.pagetitle]]</h3>
+            <h3 class="page-footer__title">
+              {if $_modx->config.cultureKey == 'ru' ?}
+                [[#8.pagetitle]]
+              {elseif $_modx->config.cultureKey == 'ua' ?}
+                [[#42.pagetitle]]
+              {else}
+                [[#43.pagetitle]]
+              {/if}
+            </h3>
             <ul class="page-footer__list">
               <li class="page-footer__item">
                 {*<span>м. Київ,<br>вул. Богдана Хмельницького, 26,<br>оф. 312</span>*}
-                <span>[[++company_address_kiev]]</span>
+                <span>
+                  {if $_modx->config.cultureKey == 'ru' ?}
+                    [[++company_address_kiev]]
+                  {elseif $_modx->config.cultureKey == 'ua' ?}
+                    [[++company_address_kiev_ua]]
+                  {else}
+                    [[++company_address_kiev_en]]
+                  {/if}
+                </span>
               </li>
               <li class="page-footer__item">
                 <a href="mailto:info@yakimov.com.ua" class="page-footer__link" title="Напишите нам">[[++company_email]]</a>
@@ -199,10 +297,26 @@
       <div class="page-footer__bottom">
         <div class="container">
           <article class="copyrights">
-            <span class="copyrights__master">© 2012-2017 [[++company_name]]</span>
-            <a href="http://it-doors.com" class="copyrights__dev" rel="nofollow" target="_blank" title="IT-Doors Outsourcing">Разработка
+            <span class="copyrights__master">
+              © 2012-2017
+              {if $_modx->config.cultureKey == 'ru' ?}
+                [[++company_name]]
+              {elseif $_modx->config.cultureKey == 'ua' ?}
+                [[++company_name_ua]]
+              {else}
+                [[++company_name_en]]
+              {/if}
+            </span>
+            <a href="http://it-doors.com" class="copyrights__dev" rel="nofollow" target="_blank" title="IT-Doors Outsourcing">
+              {if $_modx->config.cultureKey == 'ru' ?}
+                Разработка
+              {elseif $_modx->config.cultureKey == 'ua' ?}
+                Розробка
+              {else}
+                Development by
+              {/if}
               <span>
-                <img src="assets/img/it-doors-logo-color.png" alt="IT-Doors" width="89" height="33">
+                <img src="assets/img/it-doors-logo-color.png" alt="IT-Doors Outsourcing" width="89" height="33">
               </span>
             </a>
           </article>

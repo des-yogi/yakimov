@@ -8,7 +8,15 @@
 
         <div class="news__inner">
           [[pdoResources?
-          &parents=`6`
+          &parents=`
+          {if $_modx->config.cultureKey == 'ru' ?}
+            6
+          {elseif $_modx->config.cultureKey == 'ua' ?}
+            [[BabelTranslation? &resourceId=`6` &contextKey=`ukr`]]
+          {else}
+            [[BabelTranslation? &resourceId=`6` &contextKey=`eng`]]
+          {/if}
+          `
           &tpl=`@FILE chunks/news_card.tpl`
           &limit=`20`
           &sortby=`{ "publishedon":"DESC" }`
