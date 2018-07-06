@@ -13,6 +13,14 @@
       <a href="[[+uri]]" title="[[+pagetitle]]">[[+pagetitle]]</a>
     </h3>
     <p class="team__para">[[+tv.employee_position]]<br>[[+tv.employee_ranks]]</p>
-    <a href="[[+uri]]" class="btn">Больше</a>
+    <a href="[[+uri]]" class="btn">
+      {if $_modx->config.cultureKey == 'ru' ?}
+        Больше
+      {elseif $_modx->config.cultureKey == 'ua' ?}
+        Більше
+      {else}
+        More
+      {/if}
+    </a>
   </div>
 </div>

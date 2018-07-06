@@ -26,7 +26,15 @@
         `]]
 
         <div class="news-item__prev-wrapper">
-          <a href="javascript:history.back();" class="btn  btn--prev" title="Вернуться на предыдущую страницу">Вернуться</a>
+          <a href="javascript:history.back();" class="btn  btn--prev" title="{if $_modx->config.cultureKey == 'ru' ?}Вернуться на предыдущую страницу{elseif $_modx->config.cultureKey == 'ua' ?}Повернутися на попередню сторінку{else}Back to previous page{/if}">
+            {if $_modx->config.cultureKey == 'ru' ?}
+              Вернуться
+            {elseif $_modx->config.cultureKey == 'ua' ?}
+              Повернутися
+            {else}
+              Return
+            {/if}
+          </a>
         </div>
       </div>
     </article>

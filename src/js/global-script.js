@@ -1,4 +1,25 @@
 $( document ).ready(function() {
+  var langs = ['ua', 'en'];
+  var pathArr = location.pathname.split('/');
+
+  var langFromPath = pathArr[1] || '';
+
+  var lang = langs.indexOf(langFromPath) === -1 ? 'ru' : langFromPath;
+
+  var trans = {
+        ua: {
+            next: 'Далі',
+            prev: 'Назад'
+          },
+          ru: {
+            next: 'Вперед',
+            prev: 'Назад'
+          },
+          en: {
+            next: 'Next',
+            prev: 'Prev'
+          }
+        };
 
   $('.team__slider').owlCarousel({
     center: true,
@@ -8,7 +29,7 @@ $( document ).ready(function() {
     stagePadding: 2,
     // autoWidth: true,
     nav: true,
-    navText: ['Назад','Далі&ensp;'],
+    navText: [trans[lang].prev,trans[lang].next],
     dots: false,
     responsive:{
       768: {
@@ -70,17 +91,6 @@ $( document ).ready(function() {
       langMenu.classList.remove('main-nav__lang-item--open');
     } else return;
   })
-}());
 
-// На проекте нет jQuery, но хочется $( document ).ready...
-// function ready(fn) {
-//   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
-//     fn();
-//   } else {
-//     document.addEventListener('DOMContentLoaded', fn);
-//   }
-// }
-//
-// ready(function(){
-//   // code
-// });
+
+}());
