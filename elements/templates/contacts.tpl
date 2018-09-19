@@ -56,8 +56,10 @@
                   </span>
             </div>
           </div>
-          <div class="contacts__map-wrapper  contacts__map-wrapper--kiev">
-            <article class="map  map--kiev">Карта</article>
+          <div class="contacts__map-wrapper  contacts__map-wrapper--kiev" style="padding:0;">
+            <article class="map  map--kiev" style="width:100%;height:100%">
+              <iframe src="https://snazzymaps.com/embed/83106" style="border:none;width:100%;height:100%"></iframe>
+            </article>
           </div>
         </section>
 
@@ -107,9 +109,13 @@
                   </span>
             </div>
           </div>
-          <div class="contacts__map-wrapper  contacts__map-wrapper--odessa">
-            <article class="map  map--odessa">Карта</article>
+
+          <div class="contacts__map-wrapper  contacts__map-wrapper--odessa" style="padding:0;">
+            <article class="map  map--odessa" style="width:100%;height:100%">
+              <iframe src="https://snazzymaps.com/embed/83084" style="border:none;width:100%;height:100%"></iframe>
+            </article>
           </div>
+
         </section>
 
         <h2 class="contacts__subtitle">
@@ -147,9 +153,9 @@
           <div class="contacts__tel-wrapper">
             <h3 class="contacts__tel">
               {if $_modx->config.cultureKey == 'ru' ?}
-                Звоните нам:
+                Звоните:
               {elseif $_modx->config.cultureKey == 'ua' ?}
-                Телефонуйте нам:
+                Телефонуйте:
               {else}
                 Call Us:
               {/if}
