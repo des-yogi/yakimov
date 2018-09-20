@@ -77,10 +77,22 @@ $( document ).ready(function() {
 
 (function(){
   var langWrapper = document.querySelector('.main-nav__lang-wrapper');
-  var langLink = langWrapper.querySelector('.main-nav__lang-link');
+  var langLinks = langWrapper.querySelectorAll('.main-nav__lang-link');
   var isMobile = window.isMobile.any;
 
+  var makeActive = function () {
+    langLinks.forEach(function (link) {
+        if (link.classList.contains('active')) {
+          link.removeAttribute('href');
+          link.parentElement.classList.add('active');
+        }
+    });
+  };
+
+  makeActive();
+
   if(langWrapper && isMobile) {
+
     langWrapper.addEventListener('click', function(event) {
       // event.currentTarget.stopPropagation();
       // event.stopPropagation();
