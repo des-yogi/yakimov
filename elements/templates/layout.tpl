@@ -92,9 +92,9 @@
                 <ul class="main-nav__lang">
                   <li class="main-nav__lang-item">
                     {if $_modx->config.cultureKey == 'ru' ?}
-                      <a href="/" class="main-nav__lang-link  main-nav__lang-link--ru">RU</a>
-                      <a href="/ua/" class="main-nav__lang-link  main-nav__lang-link--ua">UA</a>
-                      <a href="/en/" class="main-nav__lang-link  main-nav__lang-link--en">EN</a>
+                      <a href="/[[+url]]" class="main-nav__lang-link  main-nav__lang-link--ru">RU</a>
+                      <a href="/ua/[[+url]]" class="main-nav__lang-link  main-nav__lang-link--ua">UA</a>
+                      <a href="/en/[[+url]]" class="main-nav__lang-link  main-nav__lang-link--en">EN</a>
                     {elseif $_modx->config.cultureKey == 'ua' ?}
                       <a href="/ua/" class="main-nav__lang-link  main-nav__lang-link--ua">UA</a>
                       <a href="/" class="main-nav__lang-link  main-nav__lang-link--ru">RU</a>

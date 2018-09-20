@@ -7,7 +7,7 @@
   cursor: pointer;
   transition: all 330ms ease-out;
 
-  @media (min-width: $menu-desktop-width) {
+  @media (min-width: $screen-xl) {
     display: none;
   }
 }

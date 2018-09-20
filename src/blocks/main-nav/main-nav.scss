@@ -28,8 +28,8 @@ $transition-time:             0.3s !default;
     position: fixed;
     top: 74px;
     right: 0;
-    z-index: 1;
-    transform: translateX(100%);
+    z-index: 10;
+    transform: translateX(200%);
     min-width: 240px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -89,6 +89,15 @@ $transition-time:             0.3s !default;
       transform: translateX(0);
       transition: all $transition-time ease-in-out;
 
+      @media (min-width: $screen-xs) and (orientation: landscape) {
+        width: 100%;
+        height: auto;
+      }
+
+      @media (min-width: $screen-lg) and (orientation: landscape) {
+        width: auto;
+      }
+
       @media (min-width: $screen-xl) {
         transform: none;
       }
@@ -101,27 +110,25 @@ $transition-time:             0.3s !default;
     padding: 0;
     list-style-type: none;
 
-    // мобильный вид списка
-    @media (max-width: ($menu-desktop-width - 1)) {
+    @media (min-width: $screen-xs) and (orientation: landscape) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      height: calc(100vh - 200px);
+    }
 
-      // открытие/закрытие меню только в случае работающего JS
-
-      .js & {
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.2s;
-      }
-
-      .js #{$block-name}--open & {
-        max-height: 100vh;
-        transition: max-height 0.6s;
-      }
+    @media (min-width: $screen-lg) and (orientation: landscape) {
+      display: block;
+      height: auto;
     }
 
     // настольный вид списка
-    @media (min-width: $menu-desktop-width) {
+    @media (min-width: $screen-xl) {
       display: flex;
       flex-wrap: wrap;
+      height: auto;
     }
   }
 
@@ -139,81 +146,97 @@ $transition-time:             0.3s !default;
         color: $main-color;
       }
     }
+
+    @media (min-width: $screen-xs) and (orientation: landscape) {
+      margin-top: 0;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  &__lang-wrapper {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding-left: 0;
+
+    @media (min-width: $screen-xl) {
+      width: 66px;
+      height: 56px;
+      transition: all 0.2s ease-in-out;
+      overflow: hidden;
+    }
+
+    &--open {
+      @media (min-width: $screen-xl) {
+        overflow: visible;
+      }
+    }
   }
 
   &__lang {
-    padding-left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
     list-style-type: none;
 
+    @media (min-width: $screen-xs) and (orientation: landscape) {
+      justify-content: flex-end;
+    }
+
     @media (min-width: $screen-xl) {
-      position: relative;
-      width: 66px;
-      // height: 56px;
-      // overflow: hidden;
+      //display: initial;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
   &__lang-item {
-    display: flex;
+    //padding: 0 20px;
+    order: 0;
+
+    &.active {
+      order: -1;
+      margin-left: -20px;
+
+      @media (min-width: $screen-xl) {
+        margin-left: 0;
+      }
+    }
 
     @media (min-width: $screen-xl) {
-      position: absolute;
-      top: 0;
-      right: 0;
       flex-direction: column;
       width: 100%;
-      // height: 100%;
       height: 56px;
+      padding: 0;
       background-color: $white;
       overflow: hidden;
       transition: all 0.2s ease-in-out;
     }
-
-    &--open {
-
-      @media (min-width: $screen-xl) {
-        height: 56px * 3;
-      }
-    }
-
   }
 
   &__lang-link {
+    display: block;
+    padding: 0 20px;
     margin-right: 35px;
+    text-transform: uppercase;
+
+    &.active {
+      color: $main-color;
+    }
 
     &:last-child {
       margin-right: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:active {
       color: $main-color;
     }
 
-    &.active {
-      // color: $text-color;
-
-      @media (min-width: $screen-xl) {
-        z-index: 1;
-        order: -1;
-      }
-    }
-
-    /* &:nth-child(0) {
-      top: 0;
-    }
-
-    &:nth-child(1) {
-      top: 56px;
-    }
-
-    &:nth-child(2) {
-      top: 56px * 2;
-    } */
-
     @media (min-width: $screen-xl) {
-      // position: absolute;
-      // top: 0;
-      // left: 0;
       margin-right: 0;
       padding-right: 20px !important;
       padding-left: 20px !important;

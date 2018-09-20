@@ -76,21 +76,41 @@ $( document ).ready(function() {
 }());
 
 (function(){
-  var langWrapper = document.querySelector('.main-nav__lang');
-  var langMenu = langWrapper.querySelector('.main-nav__lang-item');
-  // var langItems = langMenu.querySelectorAll('.main-nav__lang-link');
+  var langWrapper = document.querySelector('.main-nav__lang-wrapper');
+  var langLinks = langWrapper.querySelectorAll('.main-nav__lang-link');
+  var isMobile = window.isMobile.any;
 
-  langWrapper.addEventListener('mouseover', function() {
-    if (!langMenu.classList.contains('main-nav__lang-item--open')) {
-      langMenu.classList.add('main-nav__lang-item--open');
-    } else return;
-  })
+  var makeActive = function () {
+    langLinks.forEach(function (link) {
+        if (link.classList.contains('active')) {
+          link.removeAttribute('href');
+          link.parentElement.classList.add('active');
+        }
+    });
+  };
 
-  langWrapper.addEventListener('mouseout', function() {
-    if (langMenu.classList.contains('main-nav__lang-item--open')) {
-      langMenu.classList.remove('main-nav__lang-item--open');
-    } else return;
-  })
+  makeActive();
 
+  if(langWrapper && isMobile) {
+
+    langWrapper.addEventListener('click', function(event) {
+      // event.currentTarget.stopPropagation();
+      // event.stopPropagation();
+      // event.preventDefault();
+      langWrapper.classList.toggle('main-nav__lang-wrapper--open');
+    }, true)
+  } else if (langWrapper && !isMobile) {
+      langWrapper.addEventListener('mouseover', function() {
+        if (!langWrapper.classList.contains('main-nav__lang-wrapper--open')) {
+          langWrapper.classList.add('main-nav__lang-wrapper--open');
+        } else return;
+      })
+
+      langWrapper.addEventListener('mouseout', function() {
+        if (langWrapper.classList.contains('main-nav__lang-wrapper--open')) {
+          langWrapper.classList.remove('main-nav__lang-wrapper--open');
+        } else return;
+      })
+  }
 
 }());
